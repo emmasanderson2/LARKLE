@@ -1,0 +1,70 @@
+<html>
+  <head>
+     <!-- <meta name="viewport" content="width=device-width, user-scalable=no">
+     <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'> -->
+     <!-- <script src="js/i18next-1.7.1.min.js"></script> -->
+     <!-- <script src="https://omlet.me/a/lib/jquery-cookie.js"></script> -->
+     <script src="https://omlet.me/a/lib/handlebars.js"></script>
+     <script src="https://omlet.me/a/lib/base64.js"></script>
+     <script src="https://omlet.me/a/js/yeouiju.js"></script>
+     <script src="https://omlet.me/a/js/omlet.js"></script>
+
+     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+     <script language="javascript" type="text/javascript" src="app.js"></script>
+     <script src="jQuery.fastClick.js"></script>
+     <link rel="stylesheet" href="iphone.css"/>
+
+</head>
+  <body>
+    <div class="container">
+      <h1 contenteditable="true">My 7 Item List</h1>
+
+      <div id="table" class="table-editable">
+        <table class="table">
+          <tr>
+            <td contenteditable="true" id='list1'>Item 1</td>
+          </tr>
+          <!-- This is our clonable table line -->
+          <tr>
+            <td contenteditable="true" id='list2'>Item 2</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id='list3'>Item 3</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id='list4'>Item 4</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id='list5'>Item 5</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id='list6'>Item 6</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id='list7'>Item 7</td>
+          </tr>
+        </table>
+      </div>
+      <button type="button" onclick="myFunction()">Submit</div>
+      <script>
+        function myFunction() {
+          console.log('PLEASE WORK!!');
+          var val = this.update();
+          for (var i = 1; i < 7; i++) {
+            var numlist = "#list" + i;
+            $(numlist).text(val[i-1]);
+          }
+          var rdl = Omlet.createRDL({
+            noun: "list",
+            displayTitle: "My List",
+            displayThumbnailUrl: "http://web.stanford.edu/~emmas2/LARKLE/pics/toDo.jpg",
+            displayText: "Here is My List! Please add to it if you want!",
+            callback: encodeURI(window.location.href)
+          });
+          Omlet.exit(rdl);
+        }
+      </script>
+      </div>
+  </body>
+</html>
